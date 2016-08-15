@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Shame!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main2">Shame</string>
+    <string name="id">Push here</string>
+    <string name="text1">Hér er önnur síðan</string>
+    <string name="text11">Welcome</string>
+    <string name="Button2">Previous page</string>
+</resources>
