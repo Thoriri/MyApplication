@@ -26,12 +26,12 @@
         android:inputType="textPassword"
         android:ems="10"
         android:id="@+id/etPassword"
-        android:layout_below="@+id/etUsername"
+        android:hint="Password"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/etUsername"
-        android:layout_alignEnd="@+id/etUsername"
-        android:hint="Password" />
+        android:layout_below="@+id/etUsername"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -39,11 +39,10 @@
         android:text="Login"
         android:id="@+id/bLogin"
         android:layout_below="@+id/etPassword"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="38dp"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -52,5 +51,6 @@
         android:text="Register Here"
         android:id="@+id/tvRegisterHere"
         android:layout_below="@+id/bLogin"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:allowUndo="true" />
 </RelativeLayout>
