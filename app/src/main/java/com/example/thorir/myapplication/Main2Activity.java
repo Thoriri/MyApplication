@@ -20,7 +20,7 @@ public class Main2Activity extends AppCompatActivity {
     private SensorManager mSensorManager;
     private Sensor mAccelerometer;
     private ShakeDetector mShakeDetector;
-
+    private Session session;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +35,8 @@ public class Main2Activity extends AppCompatActivity {
 
             @Override
             public void onShake(int count) {
-				/*
+
+                /*
 				 * The following method, "handleShakeEvent(count):" is a stub //
 				 * method you would use to setup whatever you want done once the
 				 * device has been shook.
@@ -44,7 +45,7 @@ public class Main2Activity extends AppCompatActivity {
                     sound.start();
             }
         });
-
+        session = new Session(this);
 
         Button button = (Button) findViewById(R.id.button4);
         button.setOnClickListener(new View.OnClickListener() {
@@ -52,9 +53,8 @@ public class Main2Activity extends AppCompatActivity {
             @Override
 
             public void onClick(View v) {
+                session.setLoggedin(false);
                 finish();
-
-
             }
 
         });

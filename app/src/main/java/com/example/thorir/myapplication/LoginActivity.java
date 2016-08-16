@@ -17,17 +17,22 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class LoginActivity extends AppCompatActivity {
-
+    private Session session;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        session = new Session(this);
         final EditText etUsername = (EditText) findViewById(R.id.etUsername);
         final EditText etPassword = (EditText) findViewById(R.id.etPassword);
         final Button bLogin = (Button) findViewById(R.id.bLogin);
         final TextView registerLink = (TextView) findViewById(R.id.tvRegisterHere);
 
+        if(session.loggedin()) {
+            Intent intent = new Intent(LoginActivity.this, Main2Activity.class);
+            LoginActivity.this.startActivity(intent);
+        }
         registerLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
                             boolean success = jsonResponse.getBoolean("success");
 
                             if(success){
-
+                                session.setLoggedin(true);
                                 Intent intent = new Intent(LoginActivity.this, Main2Activity.class);
                                 LoginActivity.this.startActivity(intent);
                             }else {
